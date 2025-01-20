@@ -2,6 +2,7 @@ import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 from classes.PostImage import *
+from classes.PostText import *
 
 
 def main():
