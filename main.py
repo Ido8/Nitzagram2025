@@ -1,6 +1,7 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
+from classes.Post import *
 
 
 def main():
@@ -18,6 +19,7 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
+    new = Post('shalom', 'yeshiva tichonit', 'shalom from yeshiva tichonit', 400, [])
 
     running = True
     while running:
@@ -30,7 +32,6 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-
         # Update display - without input update everything
         pygame.display.update()
 

@@ -114,3 +114,9 @@ def center_text(num_of_rows, text_to_display, row_number):
     text_rect.y = (POST_Y_POS + horizontal_margin +
                    row_number * TEXT_POST_FONT_SIZE)
     return text_rect
+
+
+def print_text(text, size, posx, posy, color, font_name):
+    font = pygame.font.SysFont(font_name, size)
+    text = font.render(text, True, color)
+    screen.blit(text, (posx, posy))
