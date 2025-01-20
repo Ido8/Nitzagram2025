@@ -1,7 +1,7 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
-from classes.Post import *
+from classes.PostText import PostText
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-    new = Post('shalom', 'yeshiva tichonit', 'shalom from yeshiva tichonit', 400, [])
+    new = PostText('shalom', 'yeshiva tichonit', 'shalom from yeshiva tichonit', 400, [], 'shalom from the tzadicim', BLACK, (255, 255, 255))
 
     running = True
     while running:
@@ -32,7 +32,6 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-        # Update display - without input update everything
         pygame.display.update()
 
         # Set the clock tick to be 60 times per second. 60 frames for second.
