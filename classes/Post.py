@@ -1,12 +1,14 @@
 import pygame
 from constants import *
 from helpers import *
+from classes.Comment import *
 
 
 class Post:
     """
     A class used to represent post on Nitzagram
     """
+
     def __init__(self, username, location, description, likes_couter, comments):
         self.username = username
         self.location = location
@@ -15,9 +17,11 @@ class Post:
         self.comments = comments
         self.comments_display_index = 0
 
+    def add_like(self):
+        self.likes_counter += 1
 
-
-
+    def add_comment(self, text):
+        self.comments.append(Comment(text))
 
     def display(self):
         """
@@ -32,7 +36,6 @@ class Post:
         print_text(self.description, UI_FONT_SIZE, DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS, BLACK, FONT_NAME)
         print_text(str(self.likes_counter), UI_FONT_SIZE, LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS, BLACK, FONT_NAME)
         self.display_comments()
-
 
     def display_comments(self):
         """
@@ -59,6 +62,3 @@ class Post:
             position_index += 1
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
-
-
-
